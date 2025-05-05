@@ -77,3 +77,16 @@
         @apply w-full
     }
 }
+
+/* UTILITIES */
+.button {
+    cursor: pointer;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    transition: 0.2s;
+}
+
+.button:hover{
+    scale: 1.075;
+}
