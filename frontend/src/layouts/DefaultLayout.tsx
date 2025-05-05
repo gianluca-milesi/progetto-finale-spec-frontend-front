@@ -8,7 +8,7 @@ function DefaultLayout() {
     return (
         <>
             <Header />
-            <main>
+            <main className="primary-color">
                 <Outlet />
             </main>
             <Footer />

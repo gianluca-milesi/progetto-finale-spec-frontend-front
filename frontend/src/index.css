@@ -1,1 +1,79 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* COLORS */
+.primary-color {
+    background-color: #F9FAFB;
+}
+
+.secondary-color {
+    background-color: #1F2937;
+}
+
+.accent-color {
+    background-color: #3B82F6;
+}
+
+@layer utilities {
+    .container {
+        @apply mx-auto px-4 max-w-7xl;
+    }
+
+    .row {
+        @apply flex flex-wrap -mx-2;
+    }
+
+    .col {
+        @apply px-2;
+    }
+
+    .col-1 {
+        @apply w-1/12
+    }
+
+    .col-2 {
+        @apply w-2/12
+    }
+
+    .col-3 {
+        @apply w-3/12
+    }
+
+    .col-4 {
+        @apply w-4/12
+    }
+
+    .col-5 {
+        @apply w-5/12
+    }
+
+    .col-6 {
+        @apply w-6/12
+    }
+
+    .col-7 {
+        @apply w-7/12
+    }
+
+    .col-8 {
+        @apply w-8/12
+    }
+
+    .col-9 {
+        @apply w-9/12
+    }
+
+    .col-10 {
+        @apply w-10/12
+    }
+
+    .col-11 {
+        @apply w-11/12
+    }
+
+    .col-12 {
+        @apply w-full
+    }
+}

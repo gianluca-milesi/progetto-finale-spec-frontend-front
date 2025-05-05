@@ -1,4 +1,7 @@
 export type Laptop = {
+    id: number,
+    createdAt: string,
+    updatedAt: string,
     title: string,
     category: string,
     brand: string,
