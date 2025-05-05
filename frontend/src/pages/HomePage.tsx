@@ -27,6 +27,10 @@ function HomePage() {
             ))
         }
 
+        if (selectedCategory) {
+            data = data.filter(l => l.category === selectedCategory)
+        }
+
         setFilteredLaptops(data)
     }, [laptops, query])
 
@@ -61,7 +65,7 @@ function HomePage() {
                     <div className="row">
                         {filteredLaptops.length > 0 ? (
                             filteredLaptops.map(l => (
-                                <div key={l.id} className="col-4">
+                                <div key={l.id} className="col-6">
                                     <LaptopCard laptop={l} />
                                 </div>
                             ))
