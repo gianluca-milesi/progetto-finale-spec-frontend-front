@@ -50,40 +50,50 @@ function HomePage() {
     return (
         <>
             <section>
-                <h2 className="text-2xl text-center mb-2">Cerca</h2>
-                <div className="flex justify-center items-center gap-4">
-                    <div className="filters">
-                        <select value={selectedCategory} onChange={e => setSelectedCategory(e.target.value)}>
-                            <option value="">Tutte le categorie</option>
-                            {categories.map(c => (
-                                <option key={c} value={c}>{c}</option>
-                            ))}
-                        </select>
-                        <div className="sort-filters">
-                            <select
-                                value={sortKey}
-                                onChange={e => setSortKey(e.target.value as "title" | "category")}
-                            >
-                                <option value="title">Titolo</option>
-                                <option value="category">Categoria</option>
-                            </select>
-                            <select
-                                value={sortOrder}
-                                onChange={e => setSortOrder(e.target.value as "a-z" | "z-a")}
-                            >
-                                <option value="a-z">A-z</option>
-                                <option value="z-a">z-A</option>
-                            </select>
+                <div className="container">
+                    <h2 className="text-xl font-md mb-2">Filtra Ordina e Cerca</h2>
+                    <div className="flex justify-between items-center gap-4">
+                        <div className="flex items-center gap-8">
+                            <div>
+                                <label className="flex gap-1">
+                                    <span className="italic">Categorie:</span>
+                                    <select value={selectedCategory} onChange={e => setSelectedCategory(e.target.value)}>
+                                        <option value="">Tutte le categorie</option>
+                                        {categories.map(c => (
+                                            <option key={c} value={c}>{c}</option>
+                                        ))}
+                                    </select>
+                                </label>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <label className="flex gap-1">
+                                    <span className="italic">Ordina per:</span>
+                                    <select
+                                        value={sortKey}
+                                        onChange={e => setSortKey(e.target.value as "title" | "category")}
+                                    >
+                                        <option value="title">Titolo</option>
+                                        <option value="category">Categoria</option>
+                                    </select>
+                                    <select
+                                        value={sortOrder}
+                                        onChange={e => setSortOrder(e.target.value as "a-z" | "z-a")}
+                                    >
+                                        <option value="a-z">A-z</option>
+                                        <option value="z-a">z-A</option>
+                                    </select>
+                                </label>
+                            </div>
                         </div>
-                    </div>
 
-                    <input
-                        type="text"
-                        value={query}
-                        onChange={e => setQuery(e.target.value)}
-                        className="shadow p-1 rounded justify-self-end"
-                        placeholder="Cerca..."
-                    />
+                        <input
+                            type="text"
+                            value={query}
+                            onChange={e => setQuery(e.target.value)}
+                            className="shadow-sm/50 py-1 px-2 rounded justify-self-end"
+                            placeholder="Cerca..."
+                        />
+                    </div>
                 </div>
             </section>
 
