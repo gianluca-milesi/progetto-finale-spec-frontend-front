@@ -17,12 +17,12 @@ function HomePage() {
     return (
         <>
             <section>
-                <h2 className="text-2xl text-center mb-4">Cerca</h2>
+                <h2 className="text-2xl text-center mb-2">Cerca</h2>
                 <div>Searchbar e Filters</div>
             </section>
 
             <section>
-                <h2 className="text-2xl text-center mb-4">Tutti i prodotti</h2>
+                <h2 className="text-2xl text-center mb-2">Tutti i prodotti</h2>
                 <div className="container">
                     <div className="row">
                         {laptops && laptops.map(l => (

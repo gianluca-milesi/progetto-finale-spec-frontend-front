@@ -1,6 +1,6 @@
 function Footer() {
     return (
-        <footer>Footer</footer>
+        <footer className="secondary-color p-4">Footer</footer>
     )
 }
 

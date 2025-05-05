@@ -87,6 +87,10 @@
     transition: 0.2s;
 }
 
-.button:hover{
+.button:hover {
     scale: 1.075;
+}
+
+.active {
+    text-decoration: underline;
 }
