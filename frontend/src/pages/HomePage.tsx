@@ -13,9 +13,9 @@ function HomePage() {
     if (!context) return <div>Caricamento...</div>
 
     const { laptops } = context
-    const [query, setQuery] = useState("")
+    const [query, setQuery] = useState<string>("")
     const [filteredLaptops, setFilteredLaptops] = useState<Laptop[]>([])
-    const [selectedCategory, setSelectedCategory] = useState("")
+    const [selectedCategory, setSelectedCategory] = useState<string>("")
     const categories = [...new Set(laptops.map(l => l.category))]
     const [sortKey, setSortKey] = useState<"title" | "category">("title")
     const [sortOrder, setSortOrder] = useState<"a-z" | "z-a">("a-z")
