@@ -8,7 +8,7 @@ function DefaultLayout() {
     return (
         <>
             <Header />
-            <main className="primary-color">
+            <main className="primary-color py-4">
                 <Outlet />
             </main>
             <Footer />
