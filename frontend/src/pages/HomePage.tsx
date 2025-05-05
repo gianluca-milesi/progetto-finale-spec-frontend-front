@@ -17,6 +17,8 @@ function HomePage() {
     const [filteredLaptops, setFilteredLaptops] = useState<Laptop[]>([])
     const [selectedCategory, setSelectedCategory] = useState("")
     const categories = [...new Set(laptops.map(l => l.category))]
+    const [sortKey, setSortKey] = useState<"title" | "category">("title")
+    const [sortOrder, setSortOrder] = useState<"a-z" | "z-a">("a-z")
 
     useEffect(() => {
         let data = [...laptops]
@@ -31,8 +33,18 @@ function HomePage() {
             data = data.filter(l => l.category === selectedCategory)
         }
 
+        data.sort((a, b) => {
+            const aValue = a[sortKey].toLowerCase()
+            const bValue = b[sortKey].toLowerCase()
+            if (sortOrder === "a-z") {
+                return aValue.localeCompare(bValue)
+            } else {
+                return bValue.localeCompare(aValue)
+            }
+        })
+
         setFilteredLaptops(data)
-    }, [laptops, query])
+    }, [laptops, query, selectedCategory, sortKey, sortOrder])
 
 
     return (
@@ -41,12 +53,28 @@ function HomePage() {
                 <h2 className="text-2xl text-center mb-2">Cerca</h2>
                 <div className="flex justify-center items-center gap-4">
                     <div className="filters">
-                        <select>
+                        <select value={selectedCategory} onChange={e => setSelectedCategory(e.target.value)}>
                             <option value="">Tutte le categorie</option>
                             {categories.map(c => (
                                 <option key={c} value={c}>{c}</option>
                             ))}
                         </select>
+                        <div className="sort-filters">
+                            <select
+                                value={sortKey}
+                                onChange={e => setSortKey(e.target.value as "title" | "category")}
+                            >
+                                <option value="title">Titolo</option>
+                                <option value="category">Categoria</option>
+                            </select>
+                            <select
+                                value={sortOrder}
+                                onChange={e => setSortOrder(e.target.value as "a-z" | "z-a")}
+                            >
+                                <option value="a-z">A-z</option>
+                                <option value="z-a">z-A</option>
+                            </select>
+                        </div>
                     </div>
 
                     <input
