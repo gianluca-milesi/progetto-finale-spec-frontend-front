@@ -1,8 +1,10 @@
 import GlobalContext from "../contexts/GlobalContext"
 //Hooks
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 //Components
 import LaptopCard from "../components/LaptopCard"
+//Types
+import { Laptop } from "../types/Laptop"
 
 
 function HomePage() {
@@ -11,25 +13,61 @@ function HomePage() {
     if (!context) return <div>Caricamento...</div>
 
     const { laptops } = context
-    if (!laptops || laptops.length === 0) return <div>Nessun laptop disponibile</div>
+    const [query, setQuery] = useState("")
+    const [filteredLaptops, setFilteredLaptops] = useState<Laptop[]>([])
+    const [selectedCategory, setSelectedCategory] = useState("")
+    const categories = [...new Set(laptops.map(l => l.category))]
+
+    useEffect(() => {
+        let data = [...laptops]
+
+        if (query.trim()) {
+            data = data.filter(l => (
+                l.title.toLowerCase().includes(query.toLowerCase())
+            ))
+        }
+
+        setFilteredLaptops(data)
+    }, [laptops, query])
 
 
     return (
         <>
             <section>
                 <h2 className="text-2xl text-center mb-2">Cerca</h2>
-                <div>Searchbar e Filters</div>
+                <div className="flex justify-center items-center gap-4">
+                    <div className="filters">
+                        <select>
+                            <option value="">Tutte le categorie</option>
+                            {categories.map(c => (
+                                <option key={c} value={c}>{c}</option>
+                            ))}
+                        </select>
+                    </div>
+
+                    <input
+                        type="text"
+                        value={query}
+                        onChange={e => setQuery(e.target.value)}
+                        className="shadow p-1 rounded justify-self-end"
+                        placeholder="Cerca..."
+                    />
+                </div>
             </section>
 
             <section>
                 <h2 className="text-2xl text-center mb-2">Tutti i prodotti</h2>
                 <div className="container">
                     <div className="row">
-                        {laptops && laptops.map(l => (
-                            <div key={l.id} className="col-4">
-                                <LaptopCard laptop={l} />
-                            </div>
-                        ))}
+                        {filteredLaptops.length > 0 ? (
+                            filteredLaptops.map(l => (
+                                <div key={l.id} className="col-4">
+                                    <LaptopCard laptop={l} />
+                                </div>
+                            ))
+                        ) : (
+                            <div className="text-center w-full py-4">Nessun risultato trovato.</div>
+                        )}
                     </div>
                 </div>
             </section>
