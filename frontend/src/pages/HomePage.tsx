@@ -51,7 +51,6 @@ function HomePage() {
         <>
             <section>
                 <div className="container">
-                    <h2 className="text-xl font-md mb-2">Filtra Ordina e Cerca</h2>
                     <div className="flex justify-between items-center gap-4">
                         <div className="flex items-center gap-8">
                             <div>
@@ -98,12 +97,12 @@ function HomePage() {
             </section>
 
             <section>
-                <h2 className="text-2xl text-center mb-2">Tutti i prodotti</h2>
+                <h2 className="text-2xl text-center font-semibold mb-4">Tutti i prodotti</h2>
                 <div className="container">
                     <div className="row">
                         {filteredLaptops.length > 0 ? (
                             filteredLaptops.map(l => (
-                                <div key={l.id} className="col-4">
+                                <div key={l.id} className="w-1/2 lg:w-1/3 px-2">
                                     <LaptopCard laptop={l} />
                                 </div>
                             ))
