@@ -19,6 +19,8 @@ import { Laptop } from "./types/Laptop.ts"
 function App() {
 
   const [laptops, setLaptops] = useState<Laptop[]>([])
+  const [favorites, setFavorites] = useState<Laptop[]>([])
+  const [compare, setCompare] = useState<Laptop[]>([])
 
   async function fetchLaptops() {
     try {
@@ -34,13 +36,29 @@ function App() {
     }
   }
 
+  function addFavorite(laptop: Laptop) {
+    setFavorites(prev => prev.some(l => l.id === laptop.id)
+      ? prev.filter(l => l.id !== laptop.id)
+      : [...prev, laptop]
+    )
+  }
+  console.log(favorites)
+
+  function addCompare(laptop: Laptop) {
+    setCompare(prev => prev.some(l => l.id === laptop.id)
+      ? prev.filter(l => l.id !== laptop.id)
+      : [...prev, laptop]
+    )
+  }
+  console.log(compare)
+
   useEffect(() => {
     fetchLaptops()
   }, [])
 
 
   return (
-    <GlobalContext.Provider value={{ laptops }}>
+    <GlobalContext.Provider value={{ laptops, favorites, addFavorite, compare, addCompare }}>
       <BrowserRouter>
         <Routes>
           <Route element={<DefaultLayout />}>

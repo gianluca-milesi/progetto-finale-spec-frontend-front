@@ -11,12 +11,12 @@ function HomePage() {
 
     const context = useContext(GlobalContext)
     if (!context) return <div>Caricamento...</div>
-
     const { laptops } = context
+
     const [query, setQuery] = useState<string>("")
     const [filteredLaptops, setFilteredLaptops] = useState<Laptop[]>([])
     const [selectedCategory, setSelectedCategory] = useState<string>("")
-    const categories = [...new Set(laptops.map(l => l.category))]
+    const categories: string[] = [...new Set(laptops.map(l => l.category))]
     const [sortKey, setSortKey] = useState<"title" | "category">("title")
     const [sortOrder, setSortOrder] = useState<"a-z" | "z-a">("a-z")
 
@@ -103,7 +103,7 @@ function HomePage() {
                     <div className="row">
                         {filteredLaptops.length > 0 ? (
                             filteredLaptops.map(l => (
-                                <div key={l.id} className="col-6">
+                                <div key={l.id} className="col-4">
                                     <LaptopCard laptop={l} />
                                 </div>
                             ))

@@ -4,7 +4,11 @@ import { Laptop } from "../types/Laptop"
 
 
 type GlobalContextType = {
-    laptops: Laptop[]
+    laptops: Laptop[],
+    favorites: Laptop[],
+    addFavorite: (laptop: Laptop) => void,
+    compare: Laptop[],
+    addCompare: (laptop: Laptop) => void,
 }
 
 const GlobalContext = createContext<GlobalContextType | null>(null)
