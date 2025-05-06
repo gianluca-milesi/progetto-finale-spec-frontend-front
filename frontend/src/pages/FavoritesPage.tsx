@@ -19,7 +19,7 @@ function FavoritesPage() {
 
     return (
         <>
-            <h1 className="text-2xl text-center font-semibold">Preferiti</h1>
+            <h1 className="text-2xl text-center font-semibold mb-4">Preferiti</h1>
             <div className="container">
                 <div className="row">
                     {favorites.length > 0 ? (
@@ -29,7 +29,7 @@ function FavoritesPage() {
                             </div>
                         ))
                     ) : (
-                        <div className="flex flex-col justify-center items-center gap-1 m-auto mt-2">
+                        <div className="flex flex-col justify-center items-center gap-1 m-auto">
                             <p className="italic">Non ci sono preferiti...</p>
                             <button
                                 onClick={() => navigate("/")}

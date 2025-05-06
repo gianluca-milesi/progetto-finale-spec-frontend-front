@@ -45,10 +45,17 @@ function App() {
   // console.log(favorites)
 
   function addCompare(laptop: Laptop) {
-    setCompare(prev => prev.some(l => l.id === laptop.id)
-      ? prev.filter(l => l.id !== laptop.id)
-      : [...prev, laptop]
-    )
+    setCompare(prev => {
+      const alreadyInCompare = prev.some(l => l.id === laptop.id)
+      if (alreadyInCompare) {
+        return prev.filter(l => l.id !== laptop.id)
+      } else if (prev.length < 2) {
+        return [...prev, laptop]
+      } else {
+        alert("Puoi confrontare solo due elementi alla volta")
+        return prev
+      }
+    })
   }
   // console.log(compare)
 

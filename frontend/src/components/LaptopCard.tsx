@@ -25,7 +25,7 @@ function LaptopCard({ laptop }: Props) {
 
 
     return (
-        // <Link to="/">
+        <Link to="/">
             <div className="flex items-center shadow-md/20 rounded-xl gap-2 m-2 relative hover:scale-102 duration-200 ease-in">
                 <figure>
                     <img src={laptop.category === "laptop" ? laptopPlaceholder : placeholder} className="w-25 rounded-l-xl" />
@@ -35,19 +35,27 @@ function LaptopCard({ laptop }: Props) {
                     <p className="italic">{laptop.category}</p>
                     <div className="flex gap-0.5 items-center absolute bottom-2 right-2">
                         <button
-                            onClick={() => addCompare(laptop)}
+                            onClick={(e) => {
+                                e.preventDefault()
+                                e.stopPropagation()
+                                addCompare(laptop)
+                            }}
                             className="button !py-0.5 !px-2 shadow shadow-indigo-500/50 hover:!scale-115">
                             {isCompared ? "✓" : "✚"}
                         </button>
                         <button
-                            onClick={() => addFavorite(laptop)}
+                            onClick={(e) => {
+                                e.preventDefault()
+                                e.stopPropagation()
+                                addFavorite(laptop)
+                            }}
                             className="button !py-0.5 !px-2 shadow shadow-indigo-500/50 hover:!scale-115">
                             {isFavorite ? "❤️" : "♡"}
                         </button>
                     </div>
                 </div>
-            </div>
-        // </Link>
+            </div >
+        </Link >
     )
 }
 
