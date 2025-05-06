@@ -10,12 +10,12 @@ function Navbar() {
 
     const context = useContext(GlobalContext)
     if (!context) return <div>Caricamento...</div>
-    const { compare } = context
+    const { compare, favorites } = context
 
 
     return (
         <nav>
-            <ul className="flex justify-end gap-5">
+            <ul className="flex justify-end gap-5 text-lg">
                 <li
                     className="hover:scale-105 duration-100 ease-in"
                 >
@@ -28,7 +28,7 @@ function Navbar() {
                         to="/compare"
                         className={`relative ${compare.length > 0 ? "text-indigo-600 font-bold" : ""}`}
                     >
-                        Compare
+                        Compara
                         {compare.length > 0 && (
                             <span className="absolute -top-1 -right-3 bg-indigo-500 text-white text-xs rounded-full px-1.5">
                                 {compare.length}
@@ -39,7 +39,17 @@ function Navbar() {
                 <li
                     className="hover:scale-105 duration-100 ease-in"
                 >
-                    <NavLink to="/favorites">Favorites</NavLink>
+                    <NavLink
+                        to="/favorites"
+                        className={`relative ${favorites.length > 0 ? "text-indigo-600 font-bold" : ""}`}
+                    >
+                        Preferiti
+                        {favorites.length > 0 && (
+                            <span className="absolute -top-1 -right-3 bg-indigo-500 text-white text-xs rounded-full px-1.5">
+                                {favorites.length}
+                            </span>
+                        )}
+                    </NavLink>
                 </li>
             </ul>
         </nav>

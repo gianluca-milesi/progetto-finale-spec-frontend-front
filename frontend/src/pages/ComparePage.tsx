@@ -18,7 +18,7 @@ function ComparePage() {
 
 
     return (
-        <section className="container py-5">
+        <div className="container !px-25">
             <h2 className="text-2xl text-center mb-4">Confronta Laptop</h2>
             <div className="row">
                 {[0, 1].map((index) => {
@@ -42,7 +42,7 @@ function ComparePage() {
                     )
                 })}
             </div>
-        </section>
+        </div>
     )
 }
 
