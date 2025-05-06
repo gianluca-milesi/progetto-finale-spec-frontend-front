@@ -25,7 +25,7 @@ function LaptopCard({ laptop }: Props) {
 
 
     return (
-        <Link to="/">
+        // <Link to="/">
             <div className="flex items-center shadow-md/20 rounded-xl gap-2 m-2 relative hover:scale-102 duration-200 ease-in">
                 <figure>
                     <img src={laptop.category === "laptop" ? laptopPlaceholder : placeholder} className="w-25 rounded-l-xl" />
@@ -47,7 +47,7 @@ function LaptopCard({ laptop }: Props) {
                     </div>
                 </div>
             </div>
-        </Link>
+        // </Link>
     )
 }
 

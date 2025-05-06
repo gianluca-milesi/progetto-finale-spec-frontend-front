@@ -42,7 +42,7 @@ function App() {
       : [...prev, laptop]
     )
   }
-  console.log(favorites)
+  // console.log(favorites)
 
   function addCompare(laptop: Laptop) {
     setCompare(prev => prev.some(l => l.id === laptop.id)
@@ -50,7 +50,7 @@ function App() {
       : [...prev, laptop]
     )
   }
-  console.log(compare)
+  // console.log(compare)
 
   useEffect(() => {
     fetchLaptops()
