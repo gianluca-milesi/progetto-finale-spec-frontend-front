@@ -94,7 +94,7 @@ function HomePage() {
                             type="text"
                             value={query}
                             onChange={e => setQuery(e.target.value)}
-                            className=" bg-[var(--color-surface)] border border-[var(--color-border)] rounded shadow-sm/50 py-1 px-2 hover:bg-[var(--color-surface-hover)] transition justify-self-end"
+                            className=" bg-[var(--color-bg)] border border-[var(--color-border)] rounded shadow-sm/50 py-1 px-2 hover:bg-[var(--color-surface-hover)] transition justify-self-end"
                             placeholder="Cerca..."
                         />
                     </div>
