@@ -95,8 +95,7 @@ body {
     background-color: var(--color-surface-hover)
 }
 
-.custom-button,
-.custom-add-button {
+.custom-button {
     cursor: pointer;
     background-color: var(--color-surface);
     color: var(--color-text-primary);

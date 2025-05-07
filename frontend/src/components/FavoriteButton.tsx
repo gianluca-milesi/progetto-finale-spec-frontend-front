@@ -25,9 +25,9 @@ function FavoriteButton({ laptop }: Props) {
                 e.stopPropagation()
                 addFavorite(laptop)
             }}
-            className="custom-add-button !py-0.5 !px-2 text-xl hover:!scale-115"
+            className="custom-button !py-0.5 !px-2 text-lg hover:!scale-115"
         >
-            {isFavorite ? "❤️" : "♡"}
+            {isFavorite ? "❤️" : "🤍"}
         </button>
     )
 }

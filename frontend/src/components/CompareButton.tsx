@@ -25,7 +25,7 @@ function CompareButton({ laptop }: Props) {
                 e.stopPropagation()
                 addCompare(laptop)
             }}
-            className="custom-add-button !py-0.5 !px-2 text-xl hover:!scale-115"
+            className="custom-button !py-0.5 !px-2 text-lg hover:!scale-115"
         >
             {isCompared ? "✓" : "✚"}
         </button>
