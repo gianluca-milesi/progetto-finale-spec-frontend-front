@@ -26,7 +26,7 @@ function LaptopDetailPage() {
     return (
         <div className="container">
             <div className="relative flex justify-center items-center mb-4">
-                <button className="button absolute left-0 scale-90" onClick={() => navigate(-1)}>Indietro</button>
+                <button className="custom-button absolute left-0 scale-90" onClick={() => navigate(-1)}>Indietro</button>
                 <h2 className="text-2xl text-center font-semibold">{laptop.title}</h2>
             </div>
             <LaptopDetailInfo laptop={laptop} />

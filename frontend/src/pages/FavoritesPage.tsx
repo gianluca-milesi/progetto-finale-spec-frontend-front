@@ -32,7 +32,7 @@ function FavoritesPage() {
                             <p className="italic">Non ci sono preferiti...</p>
                             <button
                                 onClick={() => navigate("/")}
-                                className="button"
+                                className="custom-button"
                             >
                                 Aggiungi dei preferiti
                             </button>

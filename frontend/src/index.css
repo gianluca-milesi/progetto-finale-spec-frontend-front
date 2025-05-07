@@ -4,21 +4,24 @@
 @tailwind utilities;
 
 /* COLORS */
-.primary-color {
-    background-color: #F9FAFB;
+:root {
+    --color-bg: #181818;
+    --color-surface: #212121;
+    --color-surface-hover: #3d3d3d;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #aaaaaa;
+    --color-border: #3d3d3d;
 }
 
-.secondary-color {
-    background-color: #1F2937;
-}
-
-.accent-color {
-    background-color: #615fff;
+/* LAYOUT */
+body {
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
 }
 
 @layer utilities {
     .container {
-        @apply mx-auto px-4 max-w-7xl;
+        @apply mx-auto px-8 max-w-7xl;
     }
 
     .row {
@@ -79,16 +82,31 @@
 }
 
 /* UTILITIES */
-.button {
+.custom-select {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.25rem;
+    padding: 0.25rem;
     cursor: pointer;
-    color: white;
-    background-color: #6366f1;
+    transition: 0.2s;
+}
+
+.custom-select:hover {
+    background-color: var(--color-surface-hover)
+}
+
+.custom-button,
+.custom-add-button {
+    cursor: pointer;
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
     padding: 0.25rem 0.5rem;
     border-radius: 0.5rem;
     transition: 0.2s;
 }
 
-.button:hover {
+.custom-button:hover {
+    background-color: var(--color-surface-hover);
     scale: 1.075;
 }
 

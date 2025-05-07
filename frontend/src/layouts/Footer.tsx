@@ -6,11 +6,11 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/f
 
 function Footer() {
     return (
-        <footer className="secondary-color border-t py-4 text-sm text-gray-500">
+        <footer className="bg-[var(--color-surface)] border-t border-[var(--color-border)] py-4 text-sm text-[var(--color-text-secondary)]">
             <div className="container text-center">
                 <p>&copy;2025 Comparatore di Laptop. Tutti i diritti riservati.</p>
-                <p className="mb-4">Creato con 💻 per il progetto finale Boolean</p>
-                <div className="flex justify-center gap-6 text-gray-500 text-xl">
+                <p className="mb-4">Creato con 💻 SPA Electronics</p>
+                <div className="flex justify-center gap-6 text-xl">
                     <Link to="https://facebook.com" target="_blank">
                         <FaFacebookF className="hover:text-blue-600 transition-colors" />
                     </Link>

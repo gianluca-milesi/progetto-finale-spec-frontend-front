@@ -13,8 +13,9 @@ function Navbar() {
 
 
     return (
-        <nav>
-            <ul className="flex justify-end gap-5 text-lg">
+        <nav className="flex justify-between items-center">
+            <strong className="text-2xl italic">SPA Electronics</strong>
+            <ul className="flex justify-end gap-5 text-lg font-bold">
                 <li
                     className="hover:scale-105 duration-100 ease-in"
                 >

@@ -31,7 +31,7 @@ function ComparePage() {
                                 ) : (
                                     <button
                                         onClick={() => navigate("/")}
-                                        className="button"
+                                        className="custom-button scale-150 hover:!scale-175"
                                     >
                                         ✚
                                     </button>

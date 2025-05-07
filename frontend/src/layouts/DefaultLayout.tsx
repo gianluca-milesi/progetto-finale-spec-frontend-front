@@ -9,7 +9,7 @@ function DefaultLayout() {
     return (
         <div className="flex flex-col min-h-screen">
             <Header />
-            <main className="primary-color py-4 flex-grow">
+            <main className="bg-[var(--color-bg)] text-[var(--color-text-primary)] py-4 flex-grow">
                 <Outlet />
             </main>
             <Footer />

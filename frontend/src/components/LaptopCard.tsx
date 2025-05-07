@@ -17,14 +17,18 @@ type Props = {
 function LaptopCard({ laptop }: Props) {
     return (
         <Link to={`/laptop/${laptop.id}`}>
-            <div className="flex items-center shadow-md/20 rounded-xl gap-2 m-2 relative hover:scale-102 duration-200 ease-in">
+            <div className="flex items-center bg-[var(--color-surface)] shadow-md/20 gap-2 m-2 relative rounded-md hover:scale-101 hover:bg-[var(--color-surface-hover)] transition ease-in">
                 <figure>
-                    <img src={laptop.category === "laptop" ? laptopPlaceholder : placeholder} className="w-25 rounded-l-xl" />
+                    <img src={laptop.category === "laptop" ? laptopPlaceholder : placeholder} className="w-30 rounded-l-md" />
                 </figure>
                 <div className="flex-col p-1">
                     <h3 className="text-lg font-medium">{laptop.title}</h3>
-                    <p className="italic">{laptop.category}</p>
-                    <div className="flex gap-0.5 items-center absolute bottom-2 right-2">
+                    <span
+                        className="italic text-xs absolute top-2 right-2 bg-[var(--color-surface-hover)] py-1 px-2 rounded-lg"
+                    >
+                        {laptop.category}
+                    </span>
+                    <div className="flex gap-1 items-center absolute bottom-2 right-2">
                         <CompareButton laptop={laptop} />
                         <FavoriteButton laptop={laptop} />
                     </div>
