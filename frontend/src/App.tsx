@@ -11,6 +11,7 @@ import BlankLayout from "./layouts/BlankLayout.tsx"
 import HomePage from "./pages/HomePage.tsx"
 import ComparePage from "./pages/ComparePage.tsx"
 import FavoritesPage from "./pages/FavoritesPage.tsx"
+import LaptopDetailPage from "./pages/LaptopDetailPage.tsx"
 import NotFoundPage from "./pages/NotFoundPage.tsx"
 //Types
 import { Laptop } from "./types/Laptop.ts"
@@ -72,6 +73,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/compare" element={<ComparePage />} />
             <Route path="/favorites" element={<FavoritesPage />} />
+            <Route path="/laptop/:id" element={<LaptopDetailPage />} />
           </Route>
           <Route element={<BlankLayout />}>
             <Route path="*" element={<NotFoundPage />}></Route>
