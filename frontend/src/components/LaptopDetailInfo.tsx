@@ -1,3 +1,4 @@
+//Types
 import { Laptop } from "../types/Laptop.ts"
 
 type Props = {

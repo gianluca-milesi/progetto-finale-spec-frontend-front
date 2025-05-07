@@ -1,9 +1,8 @@
-//React router dom
-import { NavLink } from "react-router-dom"
 //Contexts
 import GlobalContext from "../contexts/GlobalContext"
 //Hooks
 import { useContext } from "react"
+import { NavLink } from "react-router-dom"
 
 
 function Navbar() {

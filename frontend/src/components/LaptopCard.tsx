@@ -1,10 +1,10 @@
-//React router dom
+//Hooks
 import { Link } from "react-router-dom"
 //Components
-import CompareButton from "./CompareButton"
-import FavoriteButton from "./FavoriteButton"
+import CompareButton from "./CompareButton.tsx"
+import FavoriteButton from "./FavoriteButton.tsx"
 //Types
-import { Laptop } from "../types/Laptop"
+import { Laptop } from "../types/Laptop.ts"
 //Images
 import placeholder from "../../public/placeholder.jpg"
 import laptopPlaceholder from "../../public/laptop-placeholder.jpg"

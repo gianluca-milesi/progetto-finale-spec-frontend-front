@@ -1,4 +1,4 @@
-//React router dom
+//Hooks
 import { Link } from "react-router-dom"
 //React Icons
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa"

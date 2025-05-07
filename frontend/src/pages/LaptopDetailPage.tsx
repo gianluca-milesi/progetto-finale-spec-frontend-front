@@ -1,11 +1,10 @@
-//React router dom
-import { useParams } from "react-router-dom"
 //Contexts
 import GlobalContext from "../contexts/GlobalContext"
 //Hooks
 import { useContext } from "react"
+import { useParams } from "react-router-dom"
 //Pages
-import NotFoundPage from "./NotFoundPage"
+import NotFoundPage from "./NotFoundPage.tsx"
 //Components
 import LaptopDetailInfo from "../components/LaptopDetailInfo.tsx"
 import CompareButton from "../components/CompareButton.tsx"

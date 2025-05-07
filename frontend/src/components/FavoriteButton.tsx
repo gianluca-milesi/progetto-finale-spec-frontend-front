@@ -3,7 +3,7 @@ import GlobalContext from "../contexts/GlobalContext"
 //Hooks
 import { useContext } from "react"
 //Components
-import { Laptop } from "../types/Laptop"
+import { Laptop } from "../types/Laptop.tsx"
 
 type Props = {
     laptop: Laptop

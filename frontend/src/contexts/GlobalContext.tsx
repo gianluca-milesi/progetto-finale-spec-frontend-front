@@ -1,3 +1,4 @@
+//Hooks
 import { createContext } from "react"
 //Types
 import { Laptop } from "../types/Laptop"

@@ -1,11 +1,10 @@
-//React router dom
-import { useNavigate } from "react-router-dom"
 //Contexts
 import GlobalContext from "../contexts/GlobalContext"
 //Hooks
 import { useContext } from "react"
+import { useNavigate } from "react-router-dom"
 //Components
-import LaptopCard from "../components/LaptopCard"
+import LaptopCard from "../components/LaptopCard.tsx"
 
 
 function FavoritesPage() {

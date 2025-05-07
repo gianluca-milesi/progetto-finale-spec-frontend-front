@@ -1,10 +1,11 @@
+//Contexts
 import GlobalContext from "../contexts/GlobalContext"
 //Hooks
 import { useContext, useEffect, useState } from "react"
 //Components
-import LaptopCard from "../components/LaptopCard"
+import LaptopCard from "../components/LaptopCard.tsx"
 //Types
-import { Laptop } from "../types/Laptop"
+import { Laptop } from "../types/Laptop.ts"
 
 
 function HomePage() {
