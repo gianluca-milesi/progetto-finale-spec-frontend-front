@@ -76,7 +76,7 @@ function App() {
             <Route path="/laptop/:id" element={<LaptopDetailPage />} />
           </Route>
           <Route element={<BlankLayout />}>
-            <Route path="*" element={<NotFoundPage />}></Route>
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

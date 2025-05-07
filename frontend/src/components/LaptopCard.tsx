@@ -16,7 +16,7 @@ type Props = {
 
 function LaptopCard({ laptop }: Props) {
     return (
-        <Link to={`/laptops/${laptop.id}`}>
+        <Link to={`/laptop/${laptop.id}`}>
             <div className="flex items-center shadow-md/20 rounded-xl gap-2 m-2 relative hover:scale-102 duration-200 ease-in">
                 <figure>
                     <img src={laptop.category === "laptop" ? laptopPlaceholder : placeholder} className="w-25 rounded-l-xl" />
