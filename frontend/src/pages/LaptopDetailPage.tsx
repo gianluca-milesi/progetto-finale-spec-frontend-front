@@ -1,7 +1,5 @@
-//Contexts
-import GlobalContext from "../contexts/GlobalContext"
 //Hooks
-import { useContext } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 //Pages
 import NotFoundPage from "./NotFoundPage.tsx"
@@ -9,18 +7,39 @@ import NotFoundPage from "./NotFoundPage.tsx"
 import LaptopDetailInfo from "../components/LaptopDetailInfo.tsx"
 import CompareButton from "../components/CompareButton.tsx"
 import FavoriteButton from "../components/FavoriteButton.tsx"
+//Types
+import { Laptop } from "../types/Laptop.ts"
 
 
 function LaptopDetailPage() {
+
     const { id } = useParams()
-    const context = useContext(GlobalContext)
-    if (!context) return <div>Caricamento...</div>
-    const { laptops } = context
-
-    const laptop = laptops.find(l => l.id === parseInt(id || "", 10))
-    if (!laptop) return <NotFoundPage />
-
     const navigate = useNavigate()
+
+    const [laptop, setLaptop] = useState<Laptop | null>(null)
+
+    async function fetchLaptop(laptopId: number) {
+        try {
+            const response = await fetch(`http://localhost:3001/laptops/${laptopId}`)
+            if (!response.ok) {
+                throw new Error("Errore nel recupero dei dati")
+            }
+            const laptopData = await response.json()
+            setLaptop(laptopData.laptop)
+        } catch (err) {
+            console.error(err)
+        }
+    }
+    // console.log(laptop)
+
+    useEffect(() => {
+        if (!id) return
+        const numericId = parseInt(id, 10)
+        if (isNaN(numericId)) return
+        fetchLaptop(numericId)
+    }, [id])
+
+    if (!laptop) return <NotFoundPage />
 
 
     return (

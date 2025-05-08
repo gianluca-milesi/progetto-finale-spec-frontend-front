@@ -17,9 +17,9 @@ type Props = {
 function LaptopCard({ laptop }: Props) {
     return (
         <Link to={`/laptop/${laptop.id}`}>
-            <div className="flex items-center bg-[var(--color-bg)] shadow-md/50 border border-[var(--color-border)] gap-2 m-2 relative rounded-md hover:scale-102 transition ease-in">
+            <div className="flex items-center bg-[var(--color-bg)] shadow-md/50 border-[var(--color-border)] gap-2 m-2 relative rounded-md hover:scale-102 transition ease-in">
                 <figure>
-                    <img src={laptop.category === "laptop" ? laptopPlaceholder : placeholder} className="w-30 rounded-l-md" />
+                    <img src={laptop.category === "laptop" ? laptopPlaceholder : placeholder} className="w-50 rounded-l-md" />
                 </figure>
                 <div className="flex-col p-1">
                     <h3 className="text-lg font-medium">{laptop.title}</h3>

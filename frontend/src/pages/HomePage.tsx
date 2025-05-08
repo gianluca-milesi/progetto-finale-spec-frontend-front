@@ -106,7 +106,7 @@ function HomePage() {
                     <div className="row">
                         {filteredLaptops.length > 0 ? (
                             filteredLaptops.map(l => (
-                                <div key={l.id} className="w-1/2 lg:w-1/3">
+                                <div key={l.id} className="col-6 lg:col-12">
                                     <LaptopCard laptop={l} />
                                 </div>
                             ))
