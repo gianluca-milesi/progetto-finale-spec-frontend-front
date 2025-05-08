@@ -37,6 +37,22 @@ function App() {
     }
   }
 
+  async function addCompare(laptopId: number) {
+    if (compare.some(l => l.id === laptopId)) return
+
+    try {
+      const response = await fetch(`http://localhost:3001/laptops/${laptopId}`)
+      if (!response.ok) {
+        throw new Error("Errore nel recupero dei dati")
+      }
+      const laptopData = await response.json()
+      setCompare(prev => [...prev, laptopData.laptop])
+    } catch (err) {
+      console.error(err)
+    }
+  }
+  console.log(compare)
+
   function addFavorite(laptop: Laptop) {
     setFavorites(prev => prev.some(l => l.id === laptop.id)
       ? prev.filter(l => l.id !== laptop.id)
@@ -44,21 +60,6 @@ function App() {
     )
   }
   // console.log(favorites)
-
-  function addCompare(laptop: Laptop) {
-    setCompare(prev => {
-      const alreadyInCompare = prev.some(l => l.id === laptop.id)
-      if (alreadyInCompare) {
-        return prev.filter(l => l.id !== laptop.id)
-      } else if (prev.length < 2) {
-        return [...prev, laptop]
-      } else {
-        alert("Puoi confrontare solo due elementi alla volta")
-        return prev
-      }
-    })
-  }
-  // console.log(compare)
 
   useEffect(() => {
     fetchLaptops()

@@ -23,7 +23,7 @@ function CompareButton({ laptop }: Props) {
             onClick={(e) => {
                 e.preventDefault()
                 e.stopPropagation()
-                addCompare(laptop)
+                addCompare(laptop.id)
             }}
             className="custom-button !py-0.5 !px-2 text-lg hover:!scale-115"
         >
