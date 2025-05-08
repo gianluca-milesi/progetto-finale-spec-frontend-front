@@ -18,12 +18,12 @@ function ComparePage() {
     return (
         <>
             <h2 className="text-2xl text-center font-semibold mb-4">Confronta Laptop</h2>
-            <div className="container !px-25">
+            <div className="container">
                 <div className="row">
                     {compare.length > 0 ? (
-                        compare.map((l) => (
+                        compare.map((l, i) => (
                             <div key={l.id} className="col-6">
-                                <LaptopDetailsCard laptop={l} />
+                                <LaptopDetailsCard laptop={l} index={i} />
                             </div>
                         ))
                     ) : (
