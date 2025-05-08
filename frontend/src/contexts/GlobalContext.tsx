@@ -10,6 +10,7 @@ type GlobalContextType = {
     addFavorite: (laptop: Laptop) => void,
     compare: Laptop[],
     addCompare: (laptopId: number) => void,
+    removeCompare: (laptopId: number) => void
 }
 
 const GlobalContext = createContext<GlobalContextType | null>(null)

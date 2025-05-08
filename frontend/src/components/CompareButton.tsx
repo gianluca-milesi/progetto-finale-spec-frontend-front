@@ -14,7 +14,7 @@ function CompareButton({ laptop }: Props) {
 
     const context = useContext(GlobalContext)
     if (!context) return null
-    const { compare, addCompare } = context
+    const { compare, addCompare, removeCompare } = context
 
     const isCompared = compare.some(l => l.id === laptop.id)
 
@@ -23,7 +23,7 @@ function CompareButton({ laptop }: Props) {
             onClick={(e) => {
                 e.preventDefault()
                 e.stopPropagation()
-                addCompare(laptop.id)
+                isCompared ? removeCompare(laptop.id) : addCompare(laptop.id)
             }}
             className="custom-button !py-0.5 !px-2 text-lg hover:!scale-115"
         >

@@ -15,7 +15,7 @@ function LaptopDetailsCard({ laptop }: Props) {
     const context = useContext(GlobalContext)
     if (!context) return null
 
-    const { addCompare } = context
+    const { removeCompare } = context
 
 
     return (
@@ -28,8 +28,8 @@ function LaptopDetailsCard({ laptop }: Props) {
             <p className="text-sm">Sistema operativo: {laptop.os}</p>
             <p className="text-sm">Anno: {laptop.releaseYear}</p>
             <button
-                onClick={() => addCompare(laptop)}
-                className="mt-4 px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
+                onClick={() => removeCompare(laptop.id)}
+                className="cursor-pointer mt-4 px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
             >
                 Rimuovi dal confronto
             </button>

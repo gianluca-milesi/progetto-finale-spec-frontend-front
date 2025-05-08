@@ -51,7 +51,11 @@ function App() {
       console.error(err)
     }
   }
-  console.log(compare)
+
+  function removeCompare(laptopId: number) {
+    setCompare(prev => prev.filter(l => l.id !== laptopId))
+  }
+  // console.log(compare)
 
   function addFavorite(laptop: Laptop) {
     setFavorites(prev => prev.some(l => l.id === laptop.id)
@@ -67,7 +71,7 @@ function App() {
 
 
   return (
-    <GlobalContext.Provider value={{ laptops, favorites, addFavorite, compare, addCompare }}>
+    <GlobalContext.Provider value={{ laptops, favorites, addFavorite, compare, addCompare, removeCompare }}>
       <BrowserRouter>
         <Routes>
           <Route element={<DefaultLayout />}>
