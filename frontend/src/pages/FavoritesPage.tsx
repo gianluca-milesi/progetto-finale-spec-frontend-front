@@ -29,7 +29,7 @@ function FavoritesPage() {
                         ))
                     ) : (
                         <div className="flex flex-col justify-center items-center gap-1 m-auto">
-                            <p className="italic">Non ci sono preferiti...</p>
+                            <p className="italic">Non ci sono articoli preferiti...</p>
                             <button
                                 onClick={() => navigate("/")}
                                 className="custom-button"

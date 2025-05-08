@@ -19,7 +19,7 @@ function LaptopDetailsCard({ laptop }: Props) {
 
 
     return (
-        <div>
+        <div className="border p-2 m-2">
             <h3 className="text-xl font-bold mb-2">{laptop.title}</h3>
             <p className="italic text-sm mb-1">Categoria: {laptop.category}</p>
             <p className="text-sm">Brand: {laptop.brand}</p>

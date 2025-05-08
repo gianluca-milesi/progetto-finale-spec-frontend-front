@@ -16,31 +16,30 @@ function ComparePage() {
     const navigate = useNavigate()
 
     return (
-        <div className="container !px-25">
-            <h2 className="text-2xl text-center mb-4">Confronta Laptop</h2>
-            <div className="row">
-                {[0, 1].map((index) => {
-                    const laptop = compare[index]
-
-                    return (
-                        <div key={index} className="col-6">
-                            <div className="border rounded-xl min-h-[300px] shadow-md flex justify-center items-center mx-2">
-                                {laptop ? (
-                                    <LaptopDetailsCard laptop={laptop} />
-                                ) : (
-                                    <button
-                                        onClick={() => navigate("/")}
-                                        className="custom-button scale-150 hover:!scale-175"
-                                    >
-                                        ✚
-                                    </button>
-                                )}
+        <>
+            <h2 className="text-2xl text-center font-semibold mb-4">Confronta Laptop</h2>
+            <div className="container !px-25">
+                <div className="row">
+                    {compare.length > 0 ? (
+                        compare.map((l) => (
+                            <div key={l.id} className="col-6">
+                                <LaptopDetailsCard laptop={l} />
                             </div>
+                        ))
+                    ) : (
+                        <div className="flex flex-col justify-center items-center gap-1 m-auto">
+                            <p className="italic">Non ci sono articoli da confrontare...</p>
+                            <button
+                                onClick={() => navigate("/")}
+                                className="custom-button"
+                            >
+                                Aggiungi al confronto
+                            </button>
                         </div>
-                    )
-                })}
+                    )}
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 
