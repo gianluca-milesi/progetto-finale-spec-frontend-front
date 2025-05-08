@@ -5,6 +5,8 @@ import { Laptop } from "../types/Laptop"
 
 
 type GlobalContextType = {
+    isLoading: boolean,
+    setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
     laptops: Laptop[],
     favorites: Laptop[],
     addFavorite: (laptop: Laptop) => void,

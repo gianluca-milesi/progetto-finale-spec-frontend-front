@@ -1,4 +1,5 @@
 //Hooks
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 //Components
 import CompareButton from "./CompareButton.tsx"
@@ -8,7 +9,6 @@ import { Laptop } from "../types/Laptop.ts"
 //Images
 import placeholder from "../../public/placeholder.jpg"
 
-import { useEffect, useState } from "react"
 
 type Props = {
     laptop: Laptop
@@ -39,7 +39,7 @@ function LaptopCard({ laptop }: Props) {
 
     return (
         <Link to={`/laptop/${laptop.id}`}>
-            <div className="flex flex-col items-center bg-[var(--color-bg)] shadow-md/50 border-[var(--color-border)] gap-2 m-2 relative rounded-md hover:scale-102 transition ease-in">
+            <div className="flex flex-col items-center bg-[var(--color-bg)] shadow-md/50 border-[var(--color-border)] m-2 relative rounded-md hover:scale-102 transition ease-in">
                 <div className="relative w-full h-[200px] overflow-hidden flex items-center justify-center bg-white rounded-t-md">
                     <img
                         src={laptopImage || placeholder}
@@ -50,7 +50,7 @@ function LaptopCard({ laptop }: Props) {
                         {laptop.category}
                     </span>
                 </div>
-                <div className="flex-col p-1">
+                <div className="flex-col py-2">
                     <h3 className="text-lg font-medium">{laptop.title}</h3>
                     <div className="flex justify-center items-center gap-1">
                         <CompareButton laptop={laptop} />
