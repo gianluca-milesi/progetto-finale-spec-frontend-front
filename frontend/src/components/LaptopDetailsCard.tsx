@@ -22,7 +22,6 @@ function LaptopDetailsCard({ laptop }: Props) {
         <div>
             <h3 className="text-xl font-bold mb-2">{laptop.title}</h3>
             <p className="italic text-sm mb-1">Categoria: {laptop.category}</p>
-            {/* Aggiungi altre info: */}
             <p className="text-sm">Brand: {laptop.brand}</p>
             <p className="text-sm">RAM: {laptop.ram} GB</p>
             <p className="text-sm">Storage: {laptop.storage}</p>
