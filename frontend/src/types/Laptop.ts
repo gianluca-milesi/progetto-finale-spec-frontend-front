@@ -8,5 +8,6 @@ export type Laptop = {
     ram: number,
     storage: number,
     os: string,
-    releaseYear: number
+    releaseYear: number,
+    image: string
 }

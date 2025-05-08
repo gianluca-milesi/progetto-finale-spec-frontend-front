@@ -106,12 +106,12 @@ function HomePage() {
                     <div className="row">
                         {filteredLaptops.length > 0 ? (
                             filteredLaptops.map(l => (
-                                <div key={l.id} className="col-6 lg:col-12">
+                                <div key={l.id} className="col-4 lg:col-12">
                                     <LaptopCard laptop={l} />
                                 </div>
                             ))
                         ) : (
-                            <div className="text-center w-full py-4">Nessun risultato trovato.</div>
+                            <div className="text-center w-full py-4">Nessun risultato trovato...</div>
                         )}
                     </div>
                 </div>

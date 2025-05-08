@@ -19,6 +19,8 @@ import { Laptop } from "./types/Laptop.ts"
 
 function App() {
 
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+
   const [laptops, setLaptops] = useState<Laptop[]>([])
   const [favorites, setFavorites] = useState<Laptop[]>([])
   const [compare, setCompare] = useState<Laptop[]>([])
