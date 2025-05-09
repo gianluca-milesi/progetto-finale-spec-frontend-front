@@ -6,6 +6,8 @@ import { useContext, useEffect, useState } from "react"
 import LaptopCard from "../components/LaptopCard.tsx"
 //Types
 import { Laptop } from "../types/Laptop.ts"
+//Icons
+import { IoSearchOutline } from "react-icons/io5";
 
 
 function HomePage() {
@@ -53,7 +55,7 @@ function HomePage() {
             <div>
                 <div className="container">
                     <div className="flex justify-between items-center pb-2">
-                        <div className="flex items-center gap-8">
+                        <div className="flex items-center gap-4">
                             <div className="flex items-center gap-2">
                                 <span className="text-[var(--color-text-secondary)] italic">Categorie:</span>
                                 <select
@@ -89,14 +91,16 @@ function HomePage() {
                                 </div>
                             </div>
                         </div>
-
-                        <input
-                            type="text"
-                            value={query}
-                            onChange={e => setQuery(e.target.value)}
-                            className=" bg-[var(--color-bg)] border border-[var(--color-border)] rounded shadow-sm/50 py-1 px-2 hover:bg-[var(--color-surface-hover)] transition justify-self-end"
-                            placeholder="Cerca..."
-                        />
+                        <div className="flex items-center gap-2">
+                            <IoSearchOutline className="text-xl" />
+                            <input
+                                type="text"
+                                value={query}
+                                onChange={e => setQuery(e.target.value)}
+                                className=" bg-[var(--color-bg)] border border-[var(--color-border)] rounded shadow-sm/50 py-1 px-2 hover:bg-[var(--color-surface-hover)] transition justify-self-end"
+                                placeholder="Cerca..."
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

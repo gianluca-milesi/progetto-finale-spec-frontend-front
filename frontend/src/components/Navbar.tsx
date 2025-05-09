@@ -3,6 +3,8 @@ import GlobalContext from "../contexts/GlobalContext"
 //Hooks
 import { useContext } from "react"
 import { NavLink } from "react-router-dom"
+//Icons
+import { FcElectronics } from "react-icons/fc"
 
 
 function Navbar() {
@@ -14,7 +16,7 @@ function Navbar() {
 
     return (
         <nav className="flex justify-between items-center">
-            <strong className="text-2xl italic">SPA Electronics</strong>
+            <strong className="text-2xl italic flex items-center gap-1"><FcElectronics /> SPA Electronics</strong>
             <ul className="flex justify-end gap-5 text-lg font-bold">
                 <li
                     className="hover:scale-105 duration-100 ease-in"
