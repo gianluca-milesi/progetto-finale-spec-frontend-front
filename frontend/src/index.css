@@ -107,7 +107,7 @@ body {
 
 .custom-button:hover {
     background-color: var(--color-surface-hover);
-    scale: 1.075;
+    scale: 1.025;
 }
 
 .active {
