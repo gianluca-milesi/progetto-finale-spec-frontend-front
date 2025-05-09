@@ -16,7 +16,7 @@ function ComparePage() {
     const navigate = useNavigate()
 
     return (
-        <>
+        <section>
             <h2 className="text-2xl text-center font-semibold mb-4">Confronta Laptop</h2>
             <div className="container">
                 <div className="row">
@@ -39,7 +39,7 @@ function ComparePage() {
                     )}
                 </div>
             </div>
-        </>
+        </section>
     )
 }
 

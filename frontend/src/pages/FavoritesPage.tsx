@@ -17,7 +17,7 @@ function FavoritesPage() {
 
 
     return (
-        <>
+        <section>
             <h1 className="text-2xl text-center font-semibold mb-4">Preferiti</h1>
             <div className="container">
                 <div className="row">
@@ -40,7 +40,7 @@ function FavoritesPage() {
                     )}
                 </div>
             </div>
-        </>
+        </section>
     )
 }
 

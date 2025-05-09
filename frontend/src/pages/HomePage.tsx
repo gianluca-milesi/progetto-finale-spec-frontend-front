@@ -1,7 +1,7 @@
 //Contexts
 import GlobalContext from "../contexts/GlobalContext"
 //Hooks
-import { useContext, useEffect, useState } from "react"
+import { useCallback, useContext, useEffect, useState } from "react"
 //Components
 import LaptopCard from "../components/LaptopCard.tsx"
 //Types
@@ -14,14 +14,30 @@ function HomePage() {
 
     const context = useContext(GlobalContext)
     if (!context) return <div>Caricamento...</div>
-    const { laptops } = context
+    const { isLoading, setIsLoading, laptops } = context
 
     const [query, setQuery] = useState<string>("")
+    const debounceSetQuery = useCallback(debounce(setQuery, 500), [])
     const [filteredLaptops, setFilteredLaptops] = useState<Laptop[]>([])
     const [selectedCategory, setSelectedCategory] = useState<string>("")
     const categories: string[] = [...new Set(laptops.map(l => l.category))]
     const [sortKey, setSortKey] = useState<"title" | "category">("title")
     const [sortOrder, setSortOrder] = useState<"a-z" | "z-a">("a-z")
+
+    function debounce<T extends (...args: any[]) => void>(
+        callback: T,
+        delay: number
+    ): (...args: Parameters<T>) => void {
+        let timer: ReturnType<typeof setTimeout>
+        return (...args: Parameters<T>) => {
+            setIsLoading(true)
+            clearTimeout(timer)
+            timer = setTimeout(() => {
+                callback(...args)
+                setIsLoading(false)
+            }, delay)
+        }
+    }
 
     useEffect(() => {
         let data = [...laptops]
@@ -95,8 +111,7 @@ function HomePage() {
                             <IoSearchOutline className="text-xl" />
                             <input
                                 type="text"
-                                value={query}
-                                onChange={e => setQuery(e.target.value)}
+                                onChange={e => debounceSetQuery(e.target.value)}
                                 className=" bg-[var(--color-bg)] border border-[var(--color-border)] rounded shadow-sm/50 py-1 px-2 hover:bg-[var(--color-surface-hover)] transition justify-self-end"
                                 placeholder="Cerca..."
                             />
