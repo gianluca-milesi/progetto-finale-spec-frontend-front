@@ -27,8 +27,20 @@ function ComparePage() {
                             </div>
                         ))
                     ) : (
-                        <div className="flex flex-col justify-center items-center gap-1 m-auto">
-                            <p className="italic">Non ci sono articoli da confrontare...</p>
+                        <div className="col-12 flex flex-col justify-center items-center mb-2">
+                            <p className="italic text-center">Non ci sono articoli da confrontare...</p>
+                        </div>
+                    )}
+                    {compare.length % 2 ? (
+                        <div className="col-6 flex justify-center items-center max-w-[1200px] bg-[var(--color-surface)] mb-4">
+                            <button
+                                onClick={() => navigate("/")}
+                                className="custom-button scale-200"
+                            >✚
+                            </button>
+                        </div>
+                    ) : (
+                        <div className="col-12 flex flex-col justify-center items-center">
                             <button
                                 onClick={() => navigate("/")}
                                 className="custom-button"
@@ -36,7 +48,8 @@ function ComparePage() {
                                 Aggiungi al confronto
                             </button>
                         </div>
-                    )}
+                    )
+                    }
                 </div>
             </div>
         </section>

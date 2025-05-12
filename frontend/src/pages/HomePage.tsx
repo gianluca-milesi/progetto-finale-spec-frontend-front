@@ -14,7 +14,7 @@ function HomePage() {
 
     const context = useContext(GlobalContext)
     if (!context) return <div>Caricamento...</div>
-    const { isLoading, setIsLoading, laptops } = context
+    const { setIsLoading, laptops } = context
 
     const [query, setQuery] = useState<string>("")
     const debounceSetQuery = useCallback(debounce(setQuery, 500), [])
