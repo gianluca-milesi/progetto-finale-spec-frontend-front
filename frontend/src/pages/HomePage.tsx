@@ -17,7 +17,7 @@ function HomePage() {
     const { setIsLoading, laptops } = context
 
     const [query, setQuery] = useState<string>("")
-    const debounceSetQuery = useCallback(debounce(setQuery, 500), [])
+    const debounceSetQuery = useCallback(debounce(setQuery, 300), [])
     const [filteredLaptops, setFilteredLaptops] = useState<Laptop[]>([])
     const [selectedCategory, setSelectedCategory] = useState<string>("")
     const categories: string[] = [...new Set(laptops.map(l => l.category))]

@@ -1,12 +1,15 @@
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 
 function NotFoundPage() {
+
+    const navigate = useNavigate()
+
     return (
-        <div>
+        <div className="container flex flex-col justify-center items-center mb-1">
             <p>404</p>
-            <p>Pagina non trovata</p>
-            <Link to="/">Torna alla Home</Link>
+            <p>Pagina non trovata...</p>
+            <button onClick={()=> navigate("/")} className="custom-button">Torna alla Home</button>
         </div>
     )
 }

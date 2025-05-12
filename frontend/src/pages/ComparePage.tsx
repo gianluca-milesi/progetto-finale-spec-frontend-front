@@ -27,7 +27,7 @@ function ComparePage() {
                             </div>
                         ))
                     ) : (
-                        <div className="col-12 flex flex-col justify-center items-center mb-2">
+                        <div className="col-12 flex flex-col justify-center items-center mb-1">
                             <p className="italic text-center">Non ci sono articoli da confrontare...</p>
                         </div>
                     )}
@@ -43,7 +43,7 @@ function ComparePage() {
                         <div className="col-12 flex flex-col justify-center items-center">
                             <button
                                 onClick={() => navigate("/")}
-                                className="custom-button"
+                                className="custom-button !transition-none hover:!scale-100"
                             >
                                 Aggiungi al confronto
                             </button>
