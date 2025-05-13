@@ -21,7 +21,10 @@ function App() {
 
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [laptops, setLaptops] = useState<Laptop[]>([])
-  const [favorites, setFavorites] = useState<Laptop[]>([])
+  const [favorites, setFavorites] = useState<Laptop[]>(() => {
+    const saved = localStorage.getItem("favorites")
+    return saved ? JSON.parse(saved) : []
+  })
   const [compare, setCompare] = useState<Laptop[]>([])
 
   async function fetchLaptops() {
@@ -33,7 +36,7 @@ function App() {
       }
       const laptopsData = await response.json()
       setLaptops(laptopsData)
-      console.log(laptopsData)
+      // console.log(laptopsData)
     } catch (err) {
       console.error(err)
     } finally {
@@ -71,6 +74,10 @@ function App() {
     )
   }, [])
   // console.log(favorites)
+
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites))
+  }, [favorites])
 
   useEffect(() => {
     fetchLaptops()
