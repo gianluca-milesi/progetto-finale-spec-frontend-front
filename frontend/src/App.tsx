@@ -1,7 +1,7 @@
 //React Router Dom
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 //Hooks
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 //Contexts
 import GlobalContext from "./contexts/GlobalContext.tsx"
 //Layouts
@@ -41,7 +41,7 @@ function App() {
     }
   }
 
-  async function addCompare(laptopId: number) {
+  const addCompare = useCallback(async (laptopId: number) => {
     if (compare.some(l => l.id === laptopId)) return
 
     try {
@@ -57,19 +57,19 @@ function App() {
     } finally {
       setIsLoading(false)
     }
-  }
+  }, [compare])
 
-  function removeCompare(laptopId: number) {
+  const removeCompare = useCallback((laptopId: number) => {
     setCompare(prev => prev.filter(l => l.id !== laptopId))
-  }
+  }, [])
   // console.log(compare)
 
-  function addFavorite(laptop: Laptop) {
+  const addFavorite = useCallback((laptop: Laptop) => {
     setFavorites(prev => prev.some(l => l.id === laptop.id)
       ? prev.filter(l => l.id !== laptop.id)
       : [...prev, laptop]
     )
-  }
+  }, [])
   // console.log(favorites)
 
   useEffect(() => {

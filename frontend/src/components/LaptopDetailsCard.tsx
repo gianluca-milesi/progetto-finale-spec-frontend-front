@@ -1,7 +1,7 @@
 //Contexts
 import GlobalContext from "../contexts/GlobalContext"
 //Hooks
-import { useContext } from "react"
+import { useContext, memo } from "react"
 import { Link } from "react-router-dom"
 //Types
 import { Laptop } from "../types/Laptop.ts"
@@ -60,4 +60,4 @@ function LaptopDetailsCard({ laptop, index }: Props) {
     )
 }
 
-export default LaptopDetailsCard
+export default memo(LaptopDetailsCard)

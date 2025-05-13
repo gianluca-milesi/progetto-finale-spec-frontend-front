@@ -1,7 +1,7 @@
 //Contexts
 import GlobalContext from "../contexts/GlobalContext"
 //Hooks
-import { useCallback, useContext, useEffect, useState } from "react"
+import { useCallback, useContext, useEffect, useMemo, useState } from "react"
 //Components
 import LaptopCard from "../components/LaptopCard.tsx"
 //Types
@@ -20,7 +20,7 @@ function HomePage() {
     const debounceSetQuery = useCallback(debounce(setQuery, 300), [])
     const [filteredLaptops, setFilteredLaptops] = useState<Laptop[]>([])
     const [selectedCategory, setSelectedCategory] = useState<string>("")
-    const categories: string[] = [...new Set(laptops.map(l => l.category))]
+    const categories = useMemo(() => [...new Set(laptops.map(l => l.category))], [laptops])
     const [sortKey, setSortKey] = useState<"title" | "category">("title")
     const [sortOrder, setSortOrder] = useState<"a-z" | "z-a">("a-z")
 

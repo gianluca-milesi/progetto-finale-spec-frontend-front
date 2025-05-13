@@ -1,7 +1,7 @@
 //Contexts
 import GlobalContext from "../contexts/GlobalContext"
 //Hooks
-import { useContext } from "react"
+import { useContext, memo } from "react"
 //Components
 import { Laptop } from "../types/Laptop.tsx"
 
@@ -32,4 +32,4 @@ function CompareButton({ laptop }: Props) {
     )
 }
 
-export default CompareButton
+export default memo(CompareButton)

@@ -1,5 +1,5 @@
 //Hooks
-import { useEffect, useState } from "react"
+import { useEffect, useState, memo } from "react"
 import { Link } from "react-router-dom"
 //Components
 import CompareButton from "./CompareButton.tsx"
@@ -62,4 +62,4 @@ function LaptopCard({ laptop }: Props) {
     )
 }
 
-export default LaptopCard
+export default memo(LaptopCard)

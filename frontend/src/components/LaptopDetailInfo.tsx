@@ -1,3 +1,5 @@
+//Hooks
+import { memo } from "react"
 //Types
 import { Laptop } from "../types/Laptop.ts"
 //Images
@@ -33,4 +35,4 @@ function LaptopDetailInfo({ laptop }: Props) {
     )
 }
 
-export default LaptopDetailInfo
+export default memo(LaptopDetailInfo)
