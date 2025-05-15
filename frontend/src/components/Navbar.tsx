@@ -16,7 +16,7 @@ function Navbar() {
 
     return (
         <nav className="flex justify-center sm:justify-between items-center">
-            <strong className="text-2xl italic flex items-center gap-1 hidden sm:inline"><FcElectronics /> SPA Electronics</strong>
+            <strong className="text-2xl italic flex items-center gap-1 hidden sm:flex"><FcElectronics /> SPA Electronics</strong>
             <ul className="flex justify-end gap-5 text-lg font-bold">
                 <li
                     className="hover:scale-105 duration-100 ease-in"
