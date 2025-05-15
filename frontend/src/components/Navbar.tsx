@@ -15,8 +15,8 @@ function Navbar() {
 
 
     return (
-        <nav className="flex justify-between items-center">
-            <strong className="text-2xl italic flex items-center gap-1"><FcElectronics /> SPA Electronics</strong>
+        <nav className="flex justify-center sm:justify-between items-center">
+            <strong className="text-2xl italic flex items-center gap-1 hidden sm:inline"><FcElectronics /> SPA Electronics</strong>
             <ul className="flex justify-end gap-5 text-lg font-bold">
                 <li
                     className="hover:scale-105 duration-100 ease-in"
@@ -32,7 +32,7 @@ function Navbar() {
                     >
                         Compara
                         {compare.length > 0 && (
-                            <span className="absolute -top-1 -right-3 bg-indigo-500 text-white text-xs rounded-full px-1.5">
+                            <span className="absolute -top-1 -left-3 bg-indigo-500 text-white text-xs rounded-full px-1.5">
                                 {compare.length}
                             </span>
                         )}
@@ -47,7 +47,7 @@ function Navbar() {
                     >
                         Preferiti
                         {favorites.length > 0 && (
-                            <span className="absolute -top-1 -right-3 bg-indigo-500 text-white text-xs rounded-full px-1.5">
+                            <span className="absolute -top-1 -left-3 bg-indigo-500 text-white text-xs rounded-full px-1.5">
                                 {favorites.length}
                             </span>
                         )}

@@ -46,7 +46,7 @@ function LaptopDetailPage() {
         <section className="relative">
             <h2 className="text-2xl text-center font-semibold mb-4">Dettaglio Articolo</h2>
             <button className="custom-button absolute top-0 left-8 scale-90 hover:!scale-95" onClick={() => navigate(-1)}>Indietro</button>
-            <div className="container !px-60">
+            <div className="container !px-20 lg:!px-70">
                 <LaptopDetailInfo laptop={laptop} />
                 <div className="flex gap-2 justify-center mt-4">
                     <CompareButton laptop={laptop} />

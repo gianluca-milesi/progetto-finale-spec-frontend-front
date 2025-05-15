@@ -22,7 +22,7 @@ function ComparePage() {
                 <div className="row">
                     {compare.length > 0 ? (
                         compare.map((l, i) => (
-                            <div key={l.id} className="col-6">
+                            <div key={l.id} className="col-12 md:col-6">
                                 <LaptopDetailsCard laptop={l} index={i} />
                             </div>
                         ))

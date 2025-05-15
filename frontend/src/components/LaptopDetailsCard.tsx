@@ -36,7 +36,7 @@ function LaptopDetailsCard({ laptop, index }: Props) {
                         />
                     </div>
                     <div className={`flex ${isImageLeft ? "items-end" : ""} p-4 flex flex-col justify-between w-1/2 min-h-[300px]`}>
-                        <h3 className="text-xl font-bold mb-2">{laptop.title}</h3>
+                        <h3 className="text-xl font-bold mb-2 truncate">{laptop.title}</h3>
                         <p className="italic text-sm mb-1 text-[var(--color-text-secondary)]">Categoria: <span className="italic text-xs bg-[var(--color-surface-hover)] py-1 px-2 rounded-lg text-white z-10">{laptop.category}</span></p>
                         <p className="text-sm"><span className="font-semibold italic">Brand: </span>{laptop.brand}</p>
                         <p className="text-sm"><span className="font-semibold italic">RAM: </span>{laptop.ram} GB</p>

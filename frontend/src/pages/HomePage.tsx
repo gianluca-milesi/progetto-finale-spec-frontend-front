@@ -70,10 +70,10 @@ function HomePage() {
         <>
             <div>
                 <div className="container">
-                    <div className="flex justify-between items-center pb-2">
+                    <div className="flex flex-col gap-2 md:flex-row justify-between items-center pb-2">
                         <div className="flex items-center gap-4">
                             <div className="flex items-center gap-2">
-                                <span className="text-[var(--color-text-secondary)] italic">Categorie:</span>
+                                <span className="text-[var(--color-text-secondary)] italic hidden sm:inline">Categorie:</span>
                                 <select
                                     value={selectedCategory}
                                     onChange={e => setSelectedCategory(e.target.value)}
@@ -86,7 +86,7 @@ function HomePage() {
                                 </select>
                             </div>
                             <div className="flex items-center gap-2">
-                                <span className="text-[var(--color-text-secondary)] italic">Ordina per:</span>
+                                <span className="text-[var(--color-text-secondary)] italic hidden sm:inline">Ordina per:</span>
                                 <div className="flex items-center gap-1">
                                     <select
                                         value={sortKey}
@@ -125,7 +125,7 @@ function HomePage() {
                     <div className="row">
                         {filteredLaptops.length > 0 ? (
                             filteredLaptops.map(l => (
-                                <div key={l.id} className="col-4 lg:col-12">
+                                <div key={l.id} className="col-12 sm:col-6 lg:col-4">
                                     <LaptopCard laptop={l} />
                                 </div>
                             ))

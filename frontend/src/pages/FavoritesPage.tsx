@@ -23,7 +23,7 @@ function FavoritesPage() {
                 <div className="row">
                     {favorites.length > 0 ? (
                         favorites.map((l) => (
-                            <div key={l.id} className="col-6">
+                            <div key={l.id} className="col-12 sm:col-6">
                                 <LaptopCard laptop={l} />
                             </div>
                         ))
